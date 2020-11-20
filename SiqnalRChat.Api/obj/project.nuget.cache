@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tCG1yEYO35gzzv1VPFsRznq3NACfthwj94dpSBzFlQfcByzQhq0lYiNilwqvNAYhb/dVVwWXpkTnMgZBFrGckQ==",
+  "dgSpecHash": "jSVyJqGU9b+A2TuLdk4nVrBUb0Xl4cTkpyS5ANbhiseAXNPeUJ0KKFUJ1yKl1udyZhNaODWykx4rzhJY6YBA3w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
+  "projectFilePath": "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arzulla\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Arzulla\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

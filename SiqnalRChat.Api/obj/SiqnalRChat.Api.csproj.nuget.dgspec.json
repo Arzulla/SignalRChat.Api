@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj": {}
+    "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj": {
+    "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
         "projectName": "SiqnalRChat.Api",
-        "projectPath": "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
+        "projectPath": "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\SiqnalRChat.Api.csproj",
         "packagesPath": "C:\\Users\\Arzulla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arzulla\\source\\repos\\SiqnalRChat.Api\\SiqnalRChat.Api\\obj\\",
+        "outputPath": "C:\\Users\\Arzulla\\Documents\\GitHub\\SiqnalRChat.Api\\SiqnalRChat.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Arzulla\\AppData\\Roaming\\NuGet\\NuGet.Config",
