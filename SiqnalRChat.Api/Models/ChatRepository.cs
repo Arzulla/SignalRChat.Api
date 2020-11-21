@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,13 +8,13 @@ namespace SiqnalRChat.Api.Models
 {
     public interface IChatRepository
     {
-        public MessageModel Get(int id);
+        public Task<MessageModel> GetAsync(int id);
 
-        public IEnumerable<MessageModel> Get(string roomCode);
+        public Task<IEnumerable<MessageModel>> GetAsync(string roomCode);
 
-        public ListResult<MessageModel> Get(string roomCode, int skip, int take);
+        public Task<ListResult<MessageModel>> GetAsync(string roomCode, int skip, int take);
 
-        public MessageModel Add(MessageModel message);
+        public Task<MessageModel> AddAsync(MessageModel message);
 
     }
     public class ChatRepository : IChatRepository
@@ -25,28 +26,28 @@ namespace SiqnalRChat.Api.Models
             _context = appDbContext;
         }
 
-        public MessageModel Add(MessageModel message)
+        public async Task<MessageModel> AddAsync(MessageModel message)
         {
-            var tmp = _context.Messages.Add(message);
+            var tmp = await _context.Messages.AddAsync(message);
             _context.SaveChanges();
             return tmp.Entity;
         }
 
-        public MessageModel Get(int id)
+        public async Task<MessageModel> GetAsync(int id)
         {
-            return _context.Messages.Find(id);
+            return await _context.Messages.FindAsync(id);
         }
 
-        public IEnumerable<MessageModel> Get(string roomCode)
+        public async Task<IEnumerable<MessageModel>> GetAsync(string roomCode)
         {
-            return _context.Messages;
+            return await _context.Messages.Where(m=>m.RoomCode==roomCode).ToListAsync();
         }
 
-        public ListResult<MessageModel> Get(string roomCode, int skip, int take)
+        public async Task<ListResult<MessageModel>> GetAsync(string roomCode, int skip, int take)
         {
-            IEnumerable<MessageModel> list = _context.Messages.Where(m => m.RoomCode == roomCode).OrderByDescending(m => m.CreatedDate).Skip(skip).Take(take);
+            IEnumerable<MessageModel> list = await  _context.Messages.Where(m => m.RoomCode == roomCode).OrderByDescending(m => m.CreatedDate).Skip(skip).Take(take).ToListAsync();
 
-            int totalCount = _context.Messages.Where(m => m.RoomCode == roomCode).Count();
+            int totalCount =await _context.Messages.Where(m => m.RoomCode == roomCode).CountAsync();
 
             ListResult<MessageModel> result = new ListResult<MessageModel>
             {

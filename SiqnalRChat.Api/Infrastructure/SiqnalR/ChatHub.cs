@@ -25,28 +25,23 @@ namespace SiqnalRChat.Api.Infrastructure.SiqnalR
         {
             ReceiveMessageModel response = null;
 
-            var task = Task.Run(() =>
+            MessageModel msg = new MessageModel
             {
-                MessageModel msg = new MessageModel
-                {
-                    UserName = message.UserName,
-                    Message = message.Message,
-                    RoomCode = message.RoomCode,
-                    CreatedDate = DateTime.Now
-                };
+                UserName = message.UserName,
+                Message = message.Message,
+                RoomCode = message.RoomCode,
+                CreatedDate = DateTime.Now
+            };
 
-                MessageModel responseMsg = _chatRepository.Add(msg);
+            MessageModel responseMsg = await _chatRepository.AddAsync(msg);
 
-                response = new ReceiveMessageModel
-                {
-                    UserName = responseMsg.UserName,
-                    Message = responseMsg.Message,
-                    RoomCode = responseMsg.RoomCode,
-                    CreateDate = responseMsg.CreatedDate
-                };
-            });
-
-            task.Wait();
+            response = new ReceiveMessageModel
+            {
+                UserName = responseMsg.UserName,
+                Message = responseMsg.Message,
+                RoomCode = responseMsg.RoomCode,
+                CreateDate = responseMsg.CreatedDate
+            };
 
             if (response != null)
             {

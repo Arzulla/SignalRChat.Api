@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SiqnalRChat.Api.Models;
+using System.Threading.Tasks;
 
 namespace SiqnalRChat.Api.Controllers
 {
@@ -16,9 +17,9 @@ namespace SiqnalRChat.Api.Controllers
 
         [HttpGet]
         [Route("LoadMessage")]
-        public  IActionResult GetMessages([FromQuery] string roomCode,[FromQuery] int skip,[FromQuery] int take)
+        public async  Task<IActionResult> GetMessages([FromQuery] string roomCode,[FromQuery] int skip,[FromQuery] int take)
         {
-            var result = _chatRepository.Get(roomCode, skip, take);
+            var result =await _chatRepository.GetAsync(roomCode, skip, take);
             return Ok(result);
         }
     }
